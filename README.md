@@ -1,4 +1,5 @@
-# Learning to Recommend Method Names with Global Context
+# GTNM
+Implementation for the ICSE 2022 paper Learning to Recommend Method Names with Global Context
 
 ## data processing
 ### data source
@@ -35,12 +36,12 @@
     run `train.py`
 
     ```
-    python train.py --gpu gpu_id
+    python train.py --gpu gpu_id --pro True
     ```
 
 ### Testing
     run `test.py`
 
     ```
-    python test.py --gpu gpu_id
+    python test.py --gpu gpu_id --pro True
     ```
