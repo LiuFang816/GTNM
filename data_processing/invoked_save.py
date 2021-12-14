@@ -19,4 +19,4 @@ def extract_invoked_data(data_path, prefix):
         invoked.append(invoked_data)
     pickle.dump(invoked, open(os.path.join(data_path, prefix+'_invoked.pkl'), "wb"))
 
-extract_invoked_data('/data4/liufang/GTNM/', 'train_subword1')
+extract_invoked_data('/data4/liufang/GTNM/', 'train_subword')
