@@ -11,30 +11,30 @@ Implementation for the ICSE 2022 paper "Learning to Recommend Method Names with 
 
 1. run `merge_project.py` to save project information
     ```
-    - --data_path: project data dir
-    - --save_path: dir to save the project information data (`java-train.pkl, java-eval.pkl, java-test.pkl`)
+    --data_path: project data dir
+    --save_path: dir to save the project information data (`java-train.pkl, java-eval.pkl, java-test.pkl`)
     ```
 
 2. run `processor.py` to get code schema and cross project information
     ```
-    - --input_file: # dir to save the project information data (For example: `data_path/java-train.pkl`)
-    - --schema_file # dir to save code schema information (For example: `data_path/java-train_schema.pkl`)
-    - --output_file # dir to save code schema and cross project information (For example: `data_path/java-train_all.pkl`)
+    --input_file: # dir to save the project information data (For example: `data_path/java-train.pkl`)
+    --schema_file # dir to save code schema information (For example: `data_path/java-train_schema.pkl`)
+    --output_file # dir to save code schema and cross project information (For example: `data_path/java-train_all.pkl`)
     ```
 
 3. run `extract_data.py` to save final pickle data
     ```
-    - --sub_vocab_file: vocabulary for subtokens in the source code 
-    - --doc_vocab_file: vocabulary for documentation of the methods
-    - --input_file_name: dir to save code schema and cross project information (For example: `data_path/java-train_all.pkl`)
-    - --output_file_name: dir prefix to save the final data for training and evaluation (For example: `data_path/train_subword`, following files will be saved:  `data_path/train_subword_body/doc/pro/tag.pkl`)
+    --sub_vocab_file: vocabulary for subtokens in the source code 
+    --doc_vocab_file: vocabulary for documentation of the methods
+    --input_file_name: dir to save code schema and cross project information (For example: `data_path/java-train_all.pkl`)
+    --output_file_name: dir prefix to save the final data for training and evaluation (For example: `data_path/train_subword`, following files will be saved:  `data_path/train_subword_body/doc/pro/tag.pkl`)
     ```
 
 4. run `invoked_save.py` to save invoked mask for project context
     ```
     parameters:
-    - data_path: dir to save the final data for training and evaluation
-    - prefix: data prefix, for example: train_subword
+    data_path: dir to save the final data for training and evaluation
+    prefix: data prefix, for example: train_subword
     ```
 
 ## Model training and tesing
