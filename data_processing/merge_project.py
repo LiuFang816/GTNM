@@ -28,9 +28,9 @@ def get_project_data(path):
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='merge projects.')
-    parser.add_argument("--data_path", type=str, default="/data2/liufang/datasets_javam/",
+    parser.add_argument("--data_path", type=str, default="/data2/liufang/datasets_javam/java-small",
                         help="file path")
-    parser.add_argument("--save_path", type=str, default="/data4/liufang/GTNM/raw/",
+    parser.add_argument("--save_path", type=str, default="/data4/liufang/GTNM/small-raw/",
                         help="save path")
     args = parser.parse_args()
 
@@ -41,8 +41,12 @@ if __name__ == "__main__":
     projects = os.listdir(os.path.join(args.data_path, "training"))
     for project_name in tqdm(projects):
         train_data.append(get_project_data(os.path.join(args.data_path, "training", project_name)))
-        eval_data.append(get_project_data(os.path.join(args.data_path, "evaluating", project_name)))
-        test_data.append(get_project_data(os.path.join(args.data_path, "testing", project_name)))
-    pickle.dump(train_data, open(args.save_path+'java-train.pkl', "wb"))
-    pickle.dump(eval_data, open(args.save_path+'java-eval.pkl', "wb"))
-    pickle.dump(test_data, open(args.save_path+'java-test.pkl', "wb"))
+    projects = os.listdir(os.path.join(args.data_path, "validation"))
+    for project_name in tqdm(projects):
+        eval_data.append(get_project_data(os.path.join(args.data_path, "validation", project_name)))
+    projects = os.listdir(os.path.join(args.data_path, "test"))
+    for project_name in tqdm(projects):
+        test_data.append(get_project_data(os.path.join(args.data_path, "test", project_name)))
+    pickle.dump(train_data, open(args.save_path+'java-small-train.pkl', "wb"))
+    pickle.dump(eval_data, open(args.save_path+'java-small-eval.pkl', "wb"))
+    pickle.dump(test_data, open(args.save_path+'java-small-test.pkl', "wb"))

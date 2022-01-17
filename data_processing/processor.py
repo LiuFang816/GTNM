@@ -161,11 +161,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Processor.')
     parser.add_argument("--language", type=str, default="java",
                         help="language")
-    parser.add_argument("--input_file", type=str, default="/data4/liufang/GTNM/raw/java-train.pkl",
+    parser.add_argument("--input_file", type=str, default="/data4/liufang/GTNM/small-raw/java-small-test.pkl",
                         help="the input file name")
-    parser.add_argument("--schema_file", type=str, default="/data4/liufang/GTNM/raw/java-train_schema.pkl",
+    parser.add_argument("--schema_file", type=str, default="/data4/liufang/GTNM/small-raw/java-small-test_schema.pkl",
                         help="the output file name")
-    parser.add_argument("--output_file", type=str, default="/data4/liufang/GTNM/raw/java-train_all.pkl",
+    parser.add_argument("--output_file", type=str, default="/data4/liufang/GTNM/small-raw/java-small-test_all.pkl",
                         help="the output file name")
     args = parser.parse_args()
     

@@ -22,7 +22,7 @@ Implementation for the ICSE 2022 paper "Learning to Recommend Method Names with 
     - --output_file # dir to save code schema and cross project information (For example: `data_path/java-train_all.pkl`)
     ```
 
-3. run `extract_data_subword.py` to save final pickle data
+3. run `extract_data.py` to save final pickle data
     ```
     - --sub_vocab_file: vocabulary for subtokens in the source code 
     - --doc_vocab_file: vocabulary for documentation of the methods

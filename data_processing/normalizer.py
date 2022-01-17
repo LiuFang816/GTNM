@@ -27,7 +27,7 @@ class Normalizer(object):
     def __init__(self, language):
         self.language = language
         self.parser = Parser()
-        self.parser.set_language(Language("/data4/liufang/GTNM/preprocess/my-languages.so", language))
+        self.parser.set_language(Language("/data4/liufang/GTNM/data_processing/my-languages.so", language))
         self.lit_types = LIT_TYPES[language]
 
     def get_tokens(self, node, tokens, types):
